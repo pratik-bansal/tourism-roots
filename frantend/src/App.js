@@ -165,7 +165,7 @@ render(){
 
 {this.state.user?  <Layout>
     <Header style={{ position: 'fixed', zIndex: 1, width: '100%',paddingLeft:'100px' }}>
-      <div className="logo" />
+      {/* <div className="logo" /> */}
       <Menu
         theme="dark"
         mode="horizontal"
@@ -173,7 +173,7 @@ render(){
         style={{ lineHeight: '64px' }}
       >
        <Menu.Item>
-       <Avatar  style={{ backgroundColor: '#87d068',borderRadius: "50%",he}}  src="./icon.png" />
+       {/* <Avatar  style={{placement:"left"}}  src="./icon.png" /> */}
     <Link to="/add">Add</Link>
   </Menu.Item>
   <Menu.Item >
@@ -214,7 +214,7 @@ render(){
           </Drawer>
     </Header>
     
-    <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+    {/* <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer> */}
   </Layout> : null }
 
 

@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 // import Add from './Add';
 import axios from 'axios';
 import "./App.css";
-
+import "./Gallery.css";
 
 import { Card,Row,Col,Icon, Button,Menu,Dropdown } from 'antd';
 var FileDownload = require('js-file-download');
@@ -103,7 +103,7 @@ sortele(t){
 
 render(){
   return (
-      <div>
+      <div className="back">
         
         <Dropdown overlay={  <Menu>
           <Menu.Item key="0">
@@ -117,20 +117,24 @@ render(){
 } trigger={['click']}>
       <div style={{fontWeight:"bold",color:"black",paddingLeft:"100px"}}> Sort By: <Icon type="down" /></div>
   </Dropdown>
-        <Row gutter={16} >
-          {this.state.pic.map( (photo)=>  <Col  xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }} style={{paddingBottom:"50px"}}>
+  <br/>
+        <Row gutter={8} >
+          {this.state.pic.map( (photo)=>  <Col  xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 8 }} style={{paddingBottom:"7px"}}>
+            <br/>
+            <br/>
             <Card className="floating"
             hoverable
-            style={{ width: 280,backgroundColor:"lightblue" }}
+            style={{ width: 550 }}
             
-            cover={<a href=""><img alt="example" src={photo.imagepath} height="250px" /></a>}
+            cover={<a href=""><img alt="example" src={photo.imagepath} height="550px" width="550px" /> </a>}
 
             actions={[<Button onClick={()=>{this.setStatus(photo)}}  className={photo.favorite?"succ":"fal"}>
-              <Icon type="heart" theme="filled"/></Button>,<Button onClick={()=>this.Remoimg(photo)}>
-                <Icon type="delete"/></Button>,<Button onClick={()=>{this.download(photo)}}>
-                  <Icon type="download" /></Button>]}>
+              <Icon type="heart" theme="filled"/></Button>
+              ,<Button onClick={()=>this.Remoimg(photo)}><Icon type="delete"/></Button>
+                ,<Button onClick={()=>{this.download(photo)}}><Icon type="download" /></Button>]}>
             <Meta title={photo.title} description={photo.desc}/>
-            </Card></Col>)}
+            </Card>
+            </Col>)}
           </Row>
 
       </div>)

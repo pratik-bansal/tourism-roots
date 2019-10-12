@@ -1,0 +1,7 @@
+.back {
+    background: linear-gradient(to top left, #9999ff 0%, #ffcccc 100%);
+    background-size: cover; 
+    position: relative;
+
+   
+  }
